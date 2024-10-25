@@ -1,0 +1,414 @@
+version: "3.1"
+nlu:
+
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+      - moin
+      - hey there
+      - let's go
+      - hey dude
+      - goodmorning
+      - goodevening
+      - good afternoon
+      - hi there
+      - greetings
+      - howdy
+      - hola
+      - what's up
+      - hi everyone
+      - yo
+      - hey friend
+      - morning
+
+  - intent: goodbye
+    examples: |
+      - cu
+      - good by
+      - cee you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+      - see you around
+      - bye bye
+      - see you later
+      - take care
+      - farewell
+      - adios
+      - catch you later
+      - until next time
+      - so long
+      - see you soon
+      - goodbye for now
+      - take it easy
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - agreed
+      - yeah
+      - alright
+      - OK
+      - fine
+      - sure thing
+      - for sure
+      - absolutely right
+      - you bet
+      - no doubt
+      - affirmative - indeed
+      - of course
+      - that sounds good
+      - correct
+      - absolutely
+      - sure
+      - definitel
+  - intent: deny
+    examples: |
+      - no
+      - n
+      - never
+      - I don't think so
+      - don't like that
+      - no way
+      - not really
+      - I disagree
+      - not at all
+      - I'm afraid not
+      - absolutely not
+      - I don't agree
+      - not true
+      - not happening
+      - I beg to differ
+      - I can't agree
+      - I doubt it
+      - I'm not sure about that
+      - nah
+      - not my thing
+
+  - intent: ask_weather
+    examples: |
+      - [weather](weather_type) today
+      - [weather](weather_type) tomorrow
+      - [weather](weather_type) next 2 days
+      - tell me the [weather](weather_type)
+      - what is the [weather](weather_type) [today](forecast_period)?
+      - tell me the [temperature](weather_type)
+      - what is the [temperature](weather_type) [today](forecast_period)
+      - how is the [weather](weather_type) [today](forecast_period)?
+      - how is the [temperature](weather_type) [today](forecast_period)?
+      - what is the [weather](weather_type) [tomorrow](forecast_period)?
+      - how is the [weather](weather_type) [tomorrow](forecast_period)?
+      - how about the [weather](weather_type) [tomorrow](forecast_period)?
+      - what is the [weather](weather_type) [next 2 days](forecast_period)?
+      - how is the [weather](weather_type) [next 2 days](forecast_period)?
+      - how about the [weather](weather_type) [next 2 days](forecast_period)?
+      - tell me the [weather](weather_type) [today](forecast_period)
+      - tell me the [weather](weather_type) [tomorrow](forecast_period)
+      - tell me the [weather](weather_type) [next 2 days](forecast_period)
+      - what is the [weather](weather_type) [the day after tomorrow]{"entity": "forecast_period", "value": "next 2 days"}
+      - how about [tomorrow](forecast_period)
+      - how about [next 2 days](forecast_period)
+      - [the day after tomorrow]{"entity": "forecast_period", "value": "next 2 days"}
+      - [next two days]{"entity": "forecast_period", "value": "next 2 days"}
+      - [current]{"entity": "forecast_period", "value": "today"}
+      - [curent]{"entity": "forecast_period", "value": "today"}
+      - [next day]{"entity": "forecast_period", "value": "tomorrow"}
+      - [temperature](weather_type)
+      - [wind](weather_type)
+      - [humidity](weather_type)
+      - [temp]{"entity": "weather_type", "value": "temperature"}
+      - [humid]{"entity": "weather_type", "value": "humidity"}
+      - [wind](weather_type) [today](forecast_period)
+      - [temperature](weather_type) [today](forecast_period)
+      - [humidity](weather_type) [today](forecast_period)
+      - [rain](weather_type)
+      - [sunny](weather_type)
+      - [storm](weather_type)
+      - [snow](weather_type)
+      - [when](guess) will be [sunny](weather_type) [next 2 days](forecast_period)
+      - [when](guess) will be [sunny](weather_type) in [next 2 days](forecast_period)
+      - [when](guess) will be [rain](weather_type) in [next two days]{"entity": "forecast_period", "value": "next 2 days"}
+      - [when](guess) will be [storm](weather_type) in [next 2 days](forecast_period)
+      - [when](guess) will be [snow](weather_type) in [next two days]{"entity": "forecast_period", "value": "next 2 days"}
+      - Have [sunny](weather_type) in [next 2 days](forecast_period)
+      - Have [sunny](weather_type) [next 2 days](forecast_period)
+      - Have [rain](weather_type) in [next two days]{"entity": "forecast_period", "value": "next 2 days"}
+      - [when](guess) will have [sunny](weather_type) in [next 2 days](forecast_period)
+      - [when](guess) will have [rain](weather_type) in [next two days]{"entity": "forecast_period", "value": "next 2 days"}
+  - intent: ask_location
+    examples: |
+      - [Liverpool](location)
+      - [Paris](location)
+      - [New York City](location)
+      - [Tokyo](location)
+      - [Beijing](location)
+      - [Sydney](location)
+      - [Cairo](location)
+      - [Rio de Janeiro](location)
+      - [Dubai](location)
+      - [Barcelona](location)
+      - [Cape Town](location)
+      - [Los Angeles](location)
+      - [Moscow](location)
+      - [Berlin](location)
+      - [Rome](location)
+      - [Marrakech](location)
+      - [Singapore](location)
+      - [Toronto](location)
+      - [Istanbul](location)
+      - [Buenos Aires](location)
+      - [Milan](location) 
+      - [London](location)
+      - [mumbai](location)
+      - [delhi](location)
+      - [bangalore](location)
+      - [hyderbad](location)
+      - [trivanduram](location)
+      - [chennai](location)
+      - [Hanoi](location)
+      - [Ho Chi Minh City](location)
+      - [Danang](location)
+      - [Viet Tri](location)
+      - [Phu Tho](location)
+      - [Thanh Hoa](location)
+      - [hanoi]{"entity": "location", "value": "Hanoi"}
+
+  - intent: weather_location
+    examples: |
+      - what is the [weather](weather_type) [today](forecast_period) in [delhi](location)
+      - tell me the [weather](weather_type) in [mumbai](location)
+      - tell me the [weather](weather_type) in [Hanoi](location)
+      - what is the [weather](weather_type) [today](forecast_period) in [bangalore](location)
+      - tell me the [temperature](weather_type) in [chennai](location)
+      - what is the [temperature](weather_type) [today](forecast_period) in [kolkata](location)
+      - how is the [weather](weather_type) [today](forecast_period) in [hyderbad](location)
+      - how is the [temperature](weather_type) [today](forecast_period) in [thiruvandrum](location)
+      - tell me the [weather](weather_type) in [Hanoi](location) [today](forecast_period)
+      - how about the [weather](weather_type) in [Ho Chi Minh City](location) [tomorrow](forecast_period)
+      - what is the [weather](weather_type) in [Danang](location) [next 2 days](forecast_period)
+      - what is the [weather](weather_type) in [Danang](location) [the day after tomorrow]{"entity": "forecast_period", "value": "next 2 days"}
+      - how about the [weather](weather_type) [Danang](location) [the day after tomorrow]{"entity": "forecast_period", "value": "next 2 days"}
+      - what is the [wind](weather_type) in [Danang](location) [the day after tomorrow]{"entity": "forecast_period", "value": "next 2 days"}
+      - how about the [wind](weather_type) [Danang](location) [the day after tomorrow]{"entity": "forecast_period", "value": "next 2 days"}
+      - what is the [wind](weather_type) in [Danang](location) in [next day]{"entity": "forecast_period", "value": "tomorrow"}
+      - how about the [wind](weather_type) [Danang](location) in [next day]{"entity": "forecast_period", "value": "tomorrow"}
+      - what is the [humidity](weather_type) in [Danang](location) [today](forecast_period)
+      - how about the [humidity](weather_type) in [Danang](location) [tomorrow](forecast_period)
+      - what is the [humid](weather_type) in [Danang](location) [today](forecast_period)
+      - how about the [humid](weather_type) in [Danang](location) [tomorrow](forecast_period)
+      - what is the [temp](weather_type) in [Danang](location) [today](forecast_period)
+      - how about the [temp](weather_type) in [Danang](location) [tomorrow](forecast_period)
+      - tell me the [temp]{"entity": "weather_type", "value": "temperature"} in [Hanoi](location)
+      - tell me the [humid]{"entity": "weather_type", "value": "humidity"} in [Hanoi](location)
+      - what is the [wind](weather_type) in [Danang](location) [today](forecast_period)
+      - how about the [wind](weather_type) in [Danang](location) [tomorrow](forecast_period)
+      - tell me the [wind](weather_type) in [Hanoi](location) [next 2 days]
+      - [when](guess) will be [sunny](weather_type) [next 2 days](forecast_period) in [Hanoi](location)
+      - [when](guess) will be [sunny](weather_type) in [next 2 days](forecast_period) in [Danang](location)
+      - [when](guess) will be [rain](weather_type) in [Ho Chi Minh City](location) [next two days]{"entity": "forecast_period", "value": "next 2 days"}
+      - [when](guess) will be [storm](weather_type) in [Hanoi](location) [next 2 days](forecast_period)
+      - [when](guess) will be [snow](weather_type) in [next two days]{"entity": "forecast_period", "value": "next 2 days"} [Hanoi](location)
+      - Have [sunny](weather_type) in [Hanoi](location) [next 2 days](forecast_period)
+      - Have [sunny](weather_type) in [Hanoi](location) [next 2 days](forecast_period)
+      - Have [rain](weather_type) in [next two days]{"entity": "forecast_period", "value": "next 2 days"}
+      - [when](guess) will have [sunny](weather_type) in [next 2 days](forecast_period) in [Hanoi](location)
+      - [when](guess) will have [rain](weather_type) in [Hanoi](location) in [next two days]{"entity": "forecast_period", "value": "next 2 days"}
+      - Is [sunny](weather_type) [tomorrow]{"entity": "forecast_period"} in [Hanoi](location)
+      - Is [rain](weather_type) in [Hanoi](location) [tomorrow]{"entity": "forecast_period"}
+      - Is [sunny](weather_type) [tomorrow]{"entity": "forecast_period"} in [Hanoi](location)
+      - Is [snow](weather_type) in [Hanoi](location) [tomorrow]{"entity": "forecast_period"}
+
+  - intent: thanks
+    examples: |
+      - thanks
+      - thank you
+      - OK
+      - appreciate it
+      - thanks a lot
+      - thanks so much
+      - thanks a bunch
+      - thanks heaps
+      - thanks a million
+      - thanks a ton
+      - thanks for your help
+      - thanks a bunch
+      - thanks a million
+      - thanks a ton
+      - thanks for your help
+      - thanks for that
+      - thanks a million times
+      - thanks a bunches
+      - many thanks
+      - thanks again
+      
+
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a human?
+      - am I talking to a bot?
+      - am I talking to a human?
+      - prove you're not a robot
+      - can you pass the Turing test?
+      - tell me your identity
+      - are you real or artificial?
+      - are you automated?
+      - are you a machine?
+      - show me you're not a bot
+      - can bots have conversations?
+      - is this automated?
+      - are you a computer program?
+      - can you think like a human?
+      - do you have feelings?
+      - are you a living being?
+      - are you made of flesh and blood?
+      - are you sentient?
+
+  - synonym: next 2 days
+    examples: |
+      - the day after tomorrow
+      - next 2 days
+      - next 2 day
+      - next two day
+      - next two days
+      - in the next two days
+      - within the next 48 hours
+      - upcoming 48 hours
+      - upcoming two days
+      - the following 2 days
+      - within the next couple of days
+      - upcoming days
+      - the 2 days ahead
+      - the subsequent 48 hours
+      - the upcoming two days
+      - next couple of days
+      - the 2 days to come
+      - the following two days
+      - the next 48 hours
+      - within the next pair of days
+
+  - synonym: current
+    examples: |
+      - currently
+      - now
+      - todayss
+      - ttodays
+      - today
+      - at the moment
+      - present
+      - in the present time
+      - presently
+      - in this moment
+      - at this time
+      - right now
+      - in the current time
+      - as of now
+      - these days
+      - in the here and now
+      - at present
+      - in the now
+      - at the current time
+      - for today
+      
+
+  - synonym: today
+    examples: |
+      - current
+      - curent
+      - today
+      - later
+      - later today
+      - going to
+      - this day
+      - this date
+      - on this day
+      - this very day
+      - during the day
+      - in the course of today
+      - within today
+      - throughout the day
+      - on this date
+      - on this very day
+      - during this day
+      - this particular day
+      - within the day
+      - all day
+
+  - synonym: tomorrow
+    examples: |
+      - tomorrow
+      - tommorow
+      - tomorow
+      - next day
+      - next 24 hours
+      - on the morrow
+      - in the coming day
+      - the succeeding day
+      - next calendar day
+      - the subsequent day
+      - the upcoming day
+      - on the morrow
+      - in the coming day
+      - the succeeding day
+      - next calendar day
+      - the subsequent day
+      - the upcoming day
+      - within a day
+
+  - synonym: temperature
+    examples: |
+      - temp
+      - degree
+      - weather
+      - climate
+      - atmospheric temperature
+      - heat level
+      - thermal condition
+      - thermometer reading
+      - ambient temperature
+      - warmth
+      - coldness
+      - hotness
+      - Fahrenheit
+      - Celsius
+      - Kelvin
+      - heat index
+      - chill factor
+      - mercury level
+      - weather conditions
+      - temp reading
+
+  - synonym: humidity
+    examples: |
+      - humid
+      - moisture level
+      - dampness
+      - wetness
+      - mugginess
+      - dewiness
+      - water content
+      - humidity level
+      - atmospheric moisture
+      - wet atmosphere
+      - damp conditions
+      - wet air
+      - moisture content
+      - moisture in the air
+      - moistness
+      - relative humidity
+      - air dampness
+      - wet climate
+      - damp air
+      - humid conditions
+      - level of humidity
+
+
+
+
+
