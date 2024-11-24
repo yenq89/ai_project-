@@ -1,4 +1,6 @@
 version: "3.1"
+
+#Danh sách các intent mà hệ thống sẽ nhận diện trong cuộc trò chuyện với người dùng
 intents:
   - affirm
   - ask_location
@@ -11,18 +13,23 @@ intents:
   - utter_thanks
   - weather_location
 
+# Những danh sách từ đồng nghĩa được sử dụng
 synonyms:
-  - current
-  - today
-  - tomorrow
-  - next 2 days
-  - temperature
-  - humidity
+  - hiện tại
+  - hôm nay
+  - ngày mai
+  - hai ngày tới
+  - nhiệt độ
+  - độ ẩm
+
+#Nhận diện và phân loại các thành phần quan trọng trong câu hỏi
 entities:
   - location
   - forecast_period
   - weather_type
   - guess
+
+# Lưu trữ, xử lý thông tin về các giá trị location, forecasr_period
 slots:
   location:
     type: text
@@ -45,9 +52,9 @@ slots:
       - type: from_entity
         entity: forecast_period
     values:
-      - tomorrow
-      - today
-      - next 2 days
+      - hôm nay
+      - ngày mai
+      - hai ngày tới
 
   weather_type:
     type: categorical
@@ -56,14 +63,14 @@ slots:
       - type: from_entity
         entity: weather_type
     values:
-      - weather
-      - wind
-      - temperature
-      - humidity
-      - rain
-      - sunny
-      - storm
-      - snow
+      - thời tiết
+      - gió
+      - nhiệt độ
+      - độ ẩm
+      - mưa
+      - nắng
+      - bão
+      - tuyết
 
 responses:
 
@@ -90,7 +97,7 @@ responses:
     - text: Tạm biệt nhé! Nếu bạn muốn tiếp tục trò chuyện hoặc hỏi về thời tiết, tôi sẽ luôn ở đây. Hãy giữ gìn sức khỏe!
 
   utter_iamabot:
-    - text: Tôi là bot thời tiết, được tạo bởi Nhóm MYPV.
+    - text: Tôi là bot thời tiết, được tạo bởi Rasa.
 
   utter_unclear:
     - text: Tôi chưa hiểu ý bạn, bạn có thể nói rõ hơn được không?
