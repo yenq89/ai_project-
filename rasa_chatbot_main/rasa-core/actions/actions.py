@@ -130,24 +130,18 @@ class action_get_weather(Action):
 
                     if forecastPeriod is None or forecastPeriod == 'hôm nay':
                         ##current
-                        from googletrans import Translator
-                        # Khởi tạo bộ dịch
-                        translator = Translator()
 
                         # Lấy thông tin thời tiết
                         conditionCurrent = current['weather'][0]['main'] # Dịch
                         conditionDesc = current['weather'][0]['description'] # Dịch
-
-
                         temperature_cCurrent = round(current['main']['temp'] - 273.15, 2)
                         feelLike = round(current['main']['feels_like'] - 273.15, 2)
                         humidityCurrent = current['main']['humidity']
                         wind_mphCurrent = current['wind']['speed']
 
                         if weatherType is None or weatherType == 'thời tiết':
-                            response = """Hiện tại, ở {} trời đang {}. Nhiệt độ là {} độ C, cảm giác như {} độ  C, độ ẩm là {}% và tốc độ gió là {} mph.""".format(
-                                city, GoogleTranslator(source='en', target='vi').translate(conditionCurrent), temperature_cCurrent, feelLike, humidityCurrent,
-                                wind_mphCurrent)
+                            response = GoogleTranslator(source='en', target='vi').translate("""It is currently {} in {} at the moment. The temperature is {} degrees in C, feel like {}, the humidity is {}% and the wind speed is {} mph."""
+                                                                                            .format(conditionCurrent, city, temperature_cCurrent, feelLike, humidityCurrent, wind_mphCurrent))
                         elif weatherType == 'nhiệt độ':
                             response = """Nhiệt độ hiện tại là {} độ C, cảm giác như {}""".format(temperature_cCurrent,
                                                                                                   feelLike)
