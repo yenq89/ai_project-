@@ -51,50 +51,28 @@ nlu:
 
   - intent: ask_weather
     examples: |
-      - [Nắng](weather_type) hôm nay thế nào?
-      - [Mưa](weather_type) hôm nay thế nào?
-      - [Gió](weather_type) hôm nay thế nào?
-      - [Độ ẩm](weather_type) hôm nay là bao nhiêu?
-      - [Bão](weather_type) hôm nay thế nào?
-      - Thời tiết [hôm nay](forecast_period) như thế nào?
-      - Thời tiết [ngày mai](forecast_period) như thế nào?
+      - Cho tôi biết [thời tiết](weather_type) [hôm nay](forecast_period)  thế nào?
+      - Cho tôi biết [nắng](weather_type) [hôm nay](forecast_period) thế nào?
+      - [mưa](weather_type) [hôm nay](forecast_period) thế nào?
+      - [gió](weather_type) [hôm nay](forecast_period) thế nào?
+      - [độ ẩm](weather_type) [hôm nay](forecast_period) là bao nhiêu?
+      - [bão](weather_type) [hôm nay](forecast_period) thế nào?
+      - [tuyết](weather_type) [hôm nay](forecast_period) thế nào?
+      - [Thời tiết](weather_type) [hôm nay](forecast_period) như thế nào?
+      - [Thời tiết](weather_tpye) [ngày mai](forecast_period) như thế nào?
       - Thời tiết [hai ngày tới](forecast_period) như thế nào?
-      - [Hiện tại]{"entity": "forecast_period", "value": "hôm nay"}
-      - [Hôm nay]{"entity": "forecast_period", "value": "hôm nay"}
-      - [Ngày mai]{"entity": "forecast_period", "value": "ngày mai"}
-      - [Hai ngày tới]{"entity": "forecast_period", "value": "Hai ngày tới"}
+      - Hôm nay có [nắng](weather_type) không?
+      - Hôm nay có [mưa](weather_type) không?
+      - Hôm nay có [bão](weather_type) không?
+      - Hôm nay có [tuyết](weather_type) không?
+      - [thời tiết](weather_type)  [hiện tại]{"entity": "forecast_period", "value": "hôm nay"}
+      - [thời tiết](weather_type) [hôm nay]{"entity": "forecast_period", "value": "hôm nay"}
+      - [thời tiết](weather_type) [ngày mai]{"entity": "forecast_period", "value": "ngày mai"} thế nào?
+      - [thời tiết](weather_type) [hai ngày tới]{"entity": "forecast_period", "value": "Hai ngày tới"}
 
 
   - intent: ask_location
     examples: |
-      - [Liverpool](location)
-      - [Paris](location)
-      - [New York City](location)
-      - [Tokyo](location)
-      - [Beijing](location)
-      - [Sydney](location)
-      - [Cairo](location)
-      - [Rio de Janeiro](location)
-      - [Dubai](location)
-      - [Barcelona](location)
-      - [Cape Town](location)
-      - [Los Angeles](location)
-      - [Moscow](location)
-      - [Berlin](location)
-      - [Rome](location)
-      - [Marrakech](location)
-      - [Singapore](location)
-      - [Toronto](location)
-      - [Istanbul](location)
-      - [Buenos Aires](location)
-      - [Milan](location) 
-      - [London](location)
-      - [mumbai](location)
-      - [delhi](location)
-      - [bangalore](location)
-      - [hyderbad](location)
-      - [trivanduram](location)
-      - [chennai](location)
       - [Ha Noi](location)
       - [Ho Chi Minh](location)
       - [An Giang](location)
@@ -165,137 +143,20 @@ nlu:
 
   - intent: weather_location
     examples: |
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Ha Noi](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Ha Noi](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Ha Noi](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Ho Chi Minh](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Ho Chi Minh](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Ho Chi Minh](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [An Giang](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [An Giang](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [An Giang](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Ba Ria - Vung Tau](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Ba Ria - Vung Tau](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Ba Ria - Vung Tau](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Bac Giang](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Bac Giang](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Bac Giang](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Bac Kan](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Bac Kan](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Bac Kan](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Bac Lieu](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Bac Lieu](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Bac Lieu](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Bac Ninh](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Bac Ninh](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Bac Ninh](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Ben Tre](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Ben Tre](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Ben Tre](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Binh Duong](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Binh Duong](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Binh Duong](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Binh Dinh](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Binh Dinh](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Binh Dinh](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Binh Phuoc](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Binh Phuoc](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Binh Phuoc](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Binh Thuan](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Binh Thuan](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Binh Thuan](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Ca Mau](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Ca Mau](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Ca Mau](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Cao Bang](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Cao Bang](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Cao Bang](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Can Tho](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Can Tho](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Can Tho](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Dak Lak](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Dak Lak](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Dak Lak](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Dak Nong](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Dak Nong](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Dak Nong](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Dien Bien](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Dien Bien](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Dien Bien](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Dong Nai](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Dong Nai](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Dong Nai](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Dong Thap](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Dong Thap](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Dong Thap](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Gia Lai](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Gia Lai](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Gia Lai](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Ha Giang](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Ha Giang](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Ha Giang](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Ha Nam](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Ha Nam](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Ha Nam](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Ha Tinh](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Ha Tinh](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Ha Tinh](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Hai Duong](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Hai Duong](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Hai Duong](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Hai Phong](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Hai Phong](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Hai Phong](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Hau Giang](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Hau Giang](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Hau Giang](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Hoa Binh](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Hoa Binh](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Hoa Binh](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Hung Yen](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Hung Yen](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Hung Yen](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Khanh Hoa](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Khanh Hoa](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Khanh Hoa](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Kien Giang](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Kien Giang](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Kien Giang](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Kon Tum](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Kon Tum](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Kon Tum](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Lai Chau](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Lai Chau](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Lai Chau](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Lao Cai](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Lao Cai](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Lao Cai](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Lam Dong](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Lam Dong](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Lam Dong](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Long An](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Long An](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Long An](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Nam Dinh](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Nam Dinh](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Nam Dinh](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Nghe An](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Nghe An](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Nghe An](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Ninh Binh](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Ninh Binh](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Ninh Binh](location)?
-      - Cho tôi biết thời tiết [hôm nay](forecast_period) tại [Ninh Thuan](location)?
-      - Cho tôi biết thời tiết [ngày mai](forecast_period) tại [Ninh Thuan](location)?
-      - Cho tôi biết thời tiết [hai ngày tới](forecast_period) tại [Ninh Thuan](location)?
-      - [Nắng](weather_type) tại [Hà Nội](location) như thế nào?
-      - [Mưa](weather_type) tại [Hà Nội](location) như thế nào?
-      - [Gió](weather_type) tại [Hà Nội](location) như thế nào?
-      - [Bão](weather_type) tại [Hà Nội](location) như thế nào?
-      - [Tuyết](weather_type) tại [Hà Nội](location) như thế nào?
+      - Cho tôi biết [thời tiết](weather_type) [hôm nay](forecast_period) tại [Ha Noi](location)?
+      - Cho tôi biết [thời tiết](weather_type) [ngày mai](forecast_period) tại [Ha Noi](location)?
+      - Cho tôi biết [thời tiết](weather_type) [hai ngày tới](forecast_period) tại [Ha Noi](location)?
+      - [thời tiết](weather_type) [Hà Nội](location) như thế nào?
+      - [nắng](weather_type) tại [Hà Nội](location) như thế nào?
+      - [nhiệt độ](weather_type) tại [Hà Nội](location) như thế nào?
+      - [độ ẩm](weather_type) tại [Hà Nội](location) như thế nào?
+      - [mưa](weather_type) tại [Hà Nội](location) như thế nào?
+      - [gió](weather_type) tại [Hà Nội](location) như thế nào?
+      - [bão](weather_type) tại [Hà Nội](location) như thế nào?
+      - [tuyết](weather_type) tại [Hà Nội](location) như thế nào?
+      - [ngày mai](forecast_period) [Hà Nội](location) có [nắng](weather_type) không?
       
-      
-
+    
 
   - intent: thanks
     examples: |
