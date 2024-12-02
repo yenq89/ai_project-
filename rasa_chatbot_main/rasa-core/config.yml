@@ -15,6 +15,9 @@ assistant_id: 20231019-024717-paper-spring
 language: "vi"
 pipeline:
   - name: "components.tokenizer.UndertheseaTokenizer"
+    type: "DefaultV1Recipe.ComponentType.MESSAGE_TOKENIZER"
+    intent_tokenization_flag: true
+    intent_split_symbol: "_"
   - name: "RegexFeaturizer"
   - name: "LexicalSyntacticFeaturizer"
   - name: "CountVectorsFeaturizer"
