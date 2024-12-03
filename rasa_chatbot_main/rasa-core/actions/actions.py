@@ -5,10 +5,8 @@
 # https://rasa.com/docs/rasa/custom-actions
 
 
-# This is a simple example for a custom action which utters "Hello World!"
 from typing import Any, Text, Dict, List
 from deep_translator import GoogleTranslator
-
 from rasa_sdk import Action, Tracker
 from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher
@@ -24,6 +22,40 @@ class action_get_weather(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+# ------------------------------- Phục vụ mục đích test------------------------------------------------------------------------------------------------
+        print("---------------------------------------------------------------------------------------------------------")
+        # Lấy các slots
+        slots = tracker.slots
+
+        # Lấy intent và confidence từ latest_message
+        latest_intent = tracker.latest_message['intent']['name']
+        latest_confidence = tracker.latest_message['intent']['confidence']
+
+        # Lấy các entities từ latest_message
+        entities = tracker.latest_message['entities']
+
+        # Lấy intent ranking từ latest_message
+        intent_ranking = tracker.latest_message['intent_ranking']
+
+        # In các giá trị
+        print("Slots:")
+        for slot_name, slot_value in slots.items():
+            print(f"{slot_name}: {slot_value}")
+
+        print(f"\nLatest Intent: {latest_intent}, Confidence: {latest_confidence}")
+
+        print("\nEntities:")
+        for entity in entities:
+            print(entity)
+
+        print("\nIntent Ranking:")
+        for intent in intent_ranking:
+            print(f"Intent: {intent['name']}, Confidence: {intent['confidence']}")
+
+        print("---------------------------------------------------------------------------------------------------------")
+
+# ------------------------------- Phục vụ mục đích test------------------------------------------------------------------------------------------------
 
         # Đặt giá trị của api_key là khóa API cho OpenWeather API, dùng để truy cập thông tin thời tiết
         api_key = 'e7c0da0d1e27ebd35e173a262333b74f'
@@ -72,10 +104,10 @@ class action_get_weather(Action):
                         wind_mphCurrent = current['wind']['speed']
 
                         if weatherType is None or weatherType == 'thời tiết':
-                            response = GoogleTranslator(source='en', target='vi').translate("""It is currently {} in {} at the moment. The temperature is {} degrees in C, feel like {}, the humidity is {}% and the wind speed is {} mph."""
+                            response = GoogleTranslator(source='en', target='vi').translate("""It is currently {} in {} at the moment. The temperature is {} degrees in C, feel like {} degrees in C, the humidity is {}% and the wind speed is {} mph."""
                                                                                             .format(conditionCurrent, city, temperature_cCurrent, feelLike, humidityCurrent, wind_mphCurrent))
                         elif weatherType == 'nhiệt độ':
-                            response = GoogleTranslator(source='en', target='vi').translate("""The current temperature is {} degrees in C, feel like {}""".format(temperature_cCurrent,
+                            response = GoogleTranslator(source='en', target='vi').translate("""The current temperature is {} degrees in C, feel like {} degrees in C """.format(temperature_cCurrent,
                                                                                                   feelLike))
                         elif weatherType == 'độ ẩm':
                             response = GoogleTranslator(source='en', target='vi').translate("""The humidity now is {}%""".format(humidityCurrent))
