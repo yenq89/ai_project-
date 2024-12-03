@@ -206,7 +206,8 @@ class action_get_weather(Action):
                                 response = GoogleTranslator(source='en', target='vi').translate(f"""No, the next day is not rain, it is  {conditionDesc}""")
 
 # -------------------------------------------------------Dự báo thời tiết cho hai ngày tới ----------------------------------------------------------------------#
-                    elif forecastPeriod == 'hai ngày tới':
+
+                    elif forecastPeriod.lower() == "Hai ngày tới".lower():
                         tomorrows = [item for item in weathers['list'] if tomorrow[0:10] in item['dt_txt']]
                         afternoonTomorrow = [item for item in tomorrows if item['dt_txt'][11:] == '15:00:00']
                         conditionTomor = afternoonTomorrow[0]['weather'][0]['main']
@@ -220,7 +221,7 @@ class action_get_weather(Action):
                         conditionDesc = afternoon[0]['weather'][0]['description']
 
                         if guess == '' or guess is None:
-                            if weatherType is None:
+                            if weatherType is None or weatherType == 'thời tiết':
                                 response = GoogleTranslator(source='en', target='vi').translate("""The weater next 2 days in {}: \n
                                 - Morning will be {} with {}: temperature is {} degrees, the humidity is {}% and the wind speed is {} mph.\n
                                 - Afternoon will feel {} with {}: temperature is {} degrees, the humidity is {}% and the wind speed is {} mph.\n
