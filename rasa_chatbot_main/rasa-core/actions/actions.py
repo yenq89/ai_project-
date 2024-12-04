@@ -102,6 +102,7 @@ class action_get_weather(Action):
                         feelLike = round(current['main']['feels_like'] - 273.15, 2)
                         humidityCurrent = current['main']['humidity']
                         wind_mphCurrent = current['wind']['speed']
+                        wind_dirCurrent = self.wind_direction(current['wind']['deg']) # Lấy tên hướng gió
 
                         if weatherType is None or weatherType == 'thời tiết':
                             response = GoogleTranslator(source='en', target='vi').translate("""It is currently {} in {} at the moment. The temperature is {} degrees in C, feel like {} degrees in C, the humidity is {}% and the wind speed is {} mph."""
@@ -112,8 +113,8 @@ class action_get_weather(Action):
                         elif weatherType == 'độ ẩm':
                             response = GoogleTranslator(source='en', target='vi').translate("""The humidity now is {}%""".format(humidityCurrent))
                         elif weatherType == 'gió':
-                            response = GoogleTranslator(source='en', target='vi').translate("""The wind today is {} mph with deg is {} and gust is {}""".format(
-                                wind_mphCurrent, current['wind']['deg'], current['wind']['gust']))
+                            response = GoogleTranslator(source='en', target='vi').translate("""The wind today is {} mph with direction is {} and gust is {} mph""".format(
+                                wind_mphCurrent, wind_dirCurrent, current['wind']['gust']))
                         elif weatherType == 'nắng':
                             if conditionCurrent == 'Rain':
                                 response = GoogleTranslator(source='en', target='vi').translate(f"""No, today is not sunny, it {conditionDesc}""")
@@ -175,10 +176,10 @@ class action_get_weather(Action):
                                 morning[0]['main']['humidity'], afternoon[0]['main']['humidity'],
                                 evening[0]['main']['humidity']))
                         elif weatherType == 'gió':
-                            response = GoogleTranslator(source='en', target='vi').translate("""The wind tomorrow is {} mph with deg is {} and gust is {} in the morning, is {} mph with deg is {} and gust is {} in the afternoon and the last: {} mph with deg is {} and gust is {} in the evening""".format(
-                                morning[0]['wind']['speed'], morning[0]['wind']['deg'], morning[0]['wind']['gust'],
-                                afternoon[0]['wind']['speed'], afternoon[0]['wind']['deg'],
-                                afternoon[0]['wind']['gust'], evening[0]['wind']['speed'], evening[0]['wind']['deg'],
+                            response = GoogleTranslator(source='en', target='vi').translate("""The wind tomorrow is {} mph with direction is {} and gust is {} mph in the morning, is {} mph with direction is {} and gust is {} mph in the afternoon and {} mph with direction is {} and gust is {} mph in the evening""".format(
+                                morning[0]['wind']['speed'], self.wind_direction(morning[0]['wind']['deg']), morning[0]['wind']['gust'],
+                                afternoon[0]['wind']['speed'], self.wind_direction(afternoon[0]['wind']['deg']),
+                                afternoon[0]['wind']['gust'], evening[0]['wind']['speed'], self.wind_direction(evening[0]['wind']['deg']),
                                 evening[0]['wind']['gust']))
                         elif weatherType == 'nắng':
                             if conditionCurrent == 'Rain':
@@ -245,11 +246,11 @@ class action_get_weather(Action):
                                     morning[0]['main']['humidity'], afternoon[0]['main']['humidity'],
                                     evening[0]['main']['humidity']))
                             elif weatherType == 'gió':
-                                response = GoogleTranslator(source='en', target='vi').translate("""The wind next two days is {} mph with deg is {} and gust is {} in the morning, is {} mph with deg is {} and gust is {} in the afternoon and the last: {} mph with deg is {} and gust is {} in the evening""".format(
-                                    morning[0]['wind']['speed'], morning[0]['wind']['deg'], morning[0]['wind']['gust'],
-                                    afternoon[0]['wind']['speed'], afternoon[0]['wind']['deg'],
+                                response = GoogleTranslator(source='en', target='vi').translate("""The wind next two days is {} mph with direction is {} and gust is {} mph in the morning, is {} mph with direction is {} and gust is {} mph in the afternoon and {} mph with direction is {} and gust is {} mph in the evening""".format(
+                                    morning[0]['wind']['speed'], self.wind_direction(morning[0]['wind']['deg']), morning[0]['wind']['gust'],
+                                    afternoon[0]['wind']['speed'], self.wind_direction(afternoon[0]['wind']['deg']),
                                     afternoon[0]['wind']['gust'], evening[0]['wind']['speed'],
-                                    evening[0]['wind']['deg'], evening[0]['wind']['gust']))
+                                    self.wind_direction(evening[0]['wind']['deg']), evening[0]['wind']['gust']))
                             elif weatherType == 'nắng':
                                 if conditionCurrent == 'Rain':
                                     response = GoogleTranslator(source='en', target='vi').translate(f"""No, the next 2 days is not sunny, it {conditionDesc}""")
@@ -309,3 +310,26 @@ class action_get_weather(Action):
         dispatcher.utter_message(response)
 
         return [SlotSet('location', loc), SlotSet('guess', None)]
+
+    @staticmethod
+    def wind_direction(degree):
+        # Chuyển giá trị độ sang hướng gió
+        if degree is None:
+            return 'None'
+
+        if degree >= 337.5 or degree < 22.5:
+            return 'North'
+        elif 22.5 <= degree < 67.5:
+            return 'North-East'
+        elif 67.5 <= degree < 112.5:
+            return 'East'
+        elif 112.5 <= degree < 157.5:
+            return 'South-East'
+        elif 157.5 <= degree < 202.5:
+            return 'South'
+        elif 202.5 <= degree < 247.5:
+            return 'South-West'
+        elif 247.5 <= degree < 292.5:
+            return 'West'
+        else:
+            return 'North-West'

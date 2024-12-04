@@ -1,5 +1,6 @@
 version: "3.1"
 nlu:
+
   - intent: greet
     examples: |
       - chào
@@ -51,31 +52,27 @@ nlu:
   - intent: ask_weather
     examples: |
       - Cho tôi biết [thời tiết](weather_type) [hôm nay](forecast_period) thế nào?
+      - Cho tôi biết [thời tiết](weather_type) [hiện tại](forecast_period) thế nào?
+      - Cho tôi biết [thời tiết](weather_type) [ngày mai](forecast_period) thế nào?
+      - Cho tôi biết [thời tiết](weather_type) [hai ngày tới](forecast_period) thế nào?
       - Cho tôi biết [nắng](weather_type) [hôm nay](forecast_period) thế nào?
       - [mưa](weather_type) [hôm nay](forecast_period) thế nào?
       - [gió](weather_type) [hôm nay](forecast_period) thế nào?
       - [độ ẩm](weather_type) [hôm nay](forecast_period) là bao nhiêu?
       - [bão](weather_type) [hôm nay](forecast_period) thế nào?
       - [tuyết](weather_type) [hôm nay](forecast_period) thế nào?
+      - [thời tiết](weather_type) [hiện tại](forecast_period) như thế nào?
       - [Thời tiết](weather_type) [hôm nay](forecast_period) như thế nào?
       - [Thời tiết](weather_tpye) [ngày mai](forecast_period) như thế nào?
-      - Thời tiết [hai ngày tới](forecast_period) như thế nào?
+      - [Thời tiết](weather_type) [hai ngày tới](forecast_period) như thế nào?
       - Hôm nay có [nắng](weather_type) không?
       - Hôm nay có [mưa](weather_type) không?
       - Hôm nay có [bão](weather_type) không?
       - Hôm nay có [tuyết](weather_type) không?
-      - [thời tiết](weather_type) [hiện tại]{"entity": "forecast_period", "value": "hôm nay"} thế nào?
-      - [thời tiết](weather_type) [trong ngày hôm nay]{"entity": "forecast_period", "value": "hôm nay"} thế nào?
-      - [thời tiết](weather_type) [trong hôm nay]{"entity": "forecast_period", "value": "hôm nay"} thế nào?
-      - [thời tiết](weather_type) [ngày hôm nay]{"entity": "forecast_period", "value": "hôm nay"} thế nào?
-      - [thời tiết](weather_type) [ngày mai]{"entity": "forecast_period", "value": "ngày mai"} thế nào?
-      - [thời tiết](weather_type) [ngày kia]{"entity": "forecast_period", "value": "hai ngày tới"}
-      - [thời tiết](weather_type) [hai ngày sau]{"entity": "forecast_period", "value": "hai ngày tới"}
-      - [thời tiết](weather_type) [hai ngày tiếp theo]{"entity": "forecast_period", "value": "hai ngày tới"}
-      - [thời tiết](weather_type) [48 giờ tiếp theo]{"entity": "forecast_period", "value": "hai ngày tới"}
-      - [thời tiết](weather_type) [hai ngày đến]{"entity": "forecast_period", "value": "hai ngày tới"}
-      - [thời tiết](weather_type) [trong hai ngày tới]{"entity": "forecast_period", "value": "hai ngày tới"}
-      
+#      - [thời tiết](weather_type)  [hiện tại]{"entity": "forecast_period", "value": "hôm nay"}
+#      - [thời tiết](weather_type) [hôm nay]{"entity": "forecast_period", "value": "hôm nay"}
+#      - [thời tiết](weather_type) [ngày mai]{"entity": "forecast_period", "value": "ngày mai"} thế nào?
+#      - [thời tiết](weather_type) [hai ngày tới]{"entity": "forecast_period", "value": "Hai ngày tới"}
 
 
   - intent: ask_location
@@ -153,7 +150,6 @@ nlu:
       - Cho tôi biết [thời tiết](weather_type) [hôm nay](forecast_period) tại [Ha Noi](location)?
       - Cho tôi biết [thời tiết](weather_type) [ngày mai](forecast_period) tại [Ha Noi](location)?
       - Cho tôi biết [thời tiết](weather_type) [hai ngày tới](forecast_period) tại [Ha Noi](location)?
-      
       - [thời tiết](weather_type) [Hà Nội](location) như thế nào?
       - [nắng](weather_type) tại [Hà Nội](location) như thế nào?
       - [nhiệt độ](weather_type) tại [Hà Nội](location) như thế nào?
@@ -162,20 +158,7 @@ nlu:
       - [gió](weather_type) tại [Hà Nội](location) như thế nào?
       - [bão](weather_type) tại [Hà Nội](location) như thế nào?
       - [tuyết](weather_type) tại [Hà Nội](location) như thế nào?
-    
-      - [nhiệt độ](weather_type) và [độ ẩm](weather_type) tại [Hà Nội](location) [ngày mai](forecast_period) như thế nào?
-      - [nhiệt độ](weather_type) và [độ ẩm](weather_type) tại [Hà Nội](location) [ngày mai](forecast_period) như thế nào?
-
-      - [hôm nay](forecast_period) [Hà Nội](location) có [nắng](weather_type) không?
       - [ngày mai](forecast_period) [Hà Nội](location) có [nắng](weather_type) không?
-      - [hai ngày tới](forecast_period) [Hà Nội](location) có [nắng](weather_type) không?
-      - [ngày kia](forecast_period) [Hà Nội](location) có [nắng](weather_type) không?
-      - [hai ngày sau](forecast_period) [Hà Nội](location) có [nắng](weather_type) không?
-      - [hai ngày tiếp theo](forecast_period) [Hà Nội](location) có [nắng](weather_type) không?
-      - [trong hai ngày tới](forecast_period) [Hà Nội](location) có [nắng](weather_type) không?
-      - [48 giờ tới](forecast_period) [Hà Nội](location) có [nắng](weather_type) không?
-      - [hai ngày đến](forecast_period) [Hà Nội](location) có [nắng](weather_type) không?
-      
       
     
 
@@ -183,20 +166,22 @@ nlu:
     examples: |
       - thanks
       - thank you
-      - Cảm ơn
+      - Cảm ơn 
       - Cảm ơn nhiều
-      - Biết ơn
+      - Biết ơn 
       - Xin cảm ơn
 
   - synonym: hai ngày tới
     examples: |
       - ngày kia
+      - hai ngày tới
       - hai ngày sau
       - hai ngày tiếp theo
       - trong hai ngày tới
       - trong vòng 48 giờ tới
       - 48 giờ tiếp theo
       - hai ngày sắp tới
+      - trong vòng vài ngày tới
       - những ngày sắp tới
       - 48 giờ tiếp theo
       - trong hai ngày tới
@@ -204,17 +189,19 @@ nlu:
 
   - synonym: hiện tại
     examples: |
+      - hiện tại
       - bây giờ
       - ngay bây giờ
       - ngay thời điểm này
       - ngay lập tức
       - tại thời điểm này
-
-
+      
+      
 
   - synonym: hôm nay
     examples: |
       - hiện tại
+      - hôm nay
       - trong ngày hôm nay
       - ngày này
       - ngày hôm nay
@@ -272,7 +259,7 @@ nlu:
       - mức độ độ ẩm
       - độ ẩm tương đối
       - điều kiện ẩm
-
+      
 
   - intent: bot_challenge
     examples: |
@@ -295,4 +282,3 @@ nlu:
       - are you a living being?
       - are you made of flesh and blood?
       - are you sentient?
-
