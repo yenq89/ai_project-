@@ -5,13 +5,13 @@ intents:
   - affirm
   - ask_location
   - ask_weather
-  - bot_challenge
   - deny
   - goodbye
   - greet
   - thanks
   - utter_thanks
   - weather_location
+  - who_are_you
 
 # Những danh sách từ đồng nghĩa được sử dụng
 synonyms:
@@ -97,16 +97,18 @@ responses:
     - text: Tạm biệt nhé! Nếu bạn muốn tiếp tục trò chuyện hoặc hỏi về thời tiết, tôi sẽ luôn ở đây. Hãy giữ gìn sức khỏe!
 
   utter_iamabot:
-    - text: Tôi là bot thời tiết, được tạo bởi Rasa.
+    - text: Tôi là bot thời tiết, được tạo bởi Rasa. Tôi sẽ trả lời các câu hỏi liên quan đến thời tiết.
 
   utter_unclear:
     - text: Tôi chưa hiểu ý bạn, bạn có thể nói rõ hơn được không?
+    - text: Có vẻ nó không nằm trong phạm vi hiểu biết của tôi. Bạn hãy thử lại sau khi tôi thông minh hơn nhé!
 
 actions:
   - utter_greet_back
   - utter_welcome
   - action_get_weather
   - utter_unclear
+  - utter_iamabot
 
 session_config:
   session_expiration_time: 60

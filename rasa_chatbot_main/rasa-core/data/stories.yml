@@ -76,5 +76,5 @@ stories:
 
   - story: bot
     steps:
-     - intent: bot_challenge
+     - intent: who_are_you
      - action: utter_iamabot
