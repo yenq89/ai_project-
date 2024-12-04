@@ -24,16 +24,19 @@ pipeline:
     analyzer: "char_wb"
     min_ngram: 1
     max_ngram: 4
-  - name: "CountVectorsFeaturizer"
   - name: "DIETClassifier"
-    epochs: 100
+    epochs: 50
     constrain_similarities: true
+    entity_recognition: true     # nhận diện thực thể
+    intent_classification: true     #phân loại intent
   - name: "EntitySynonymMapper"
+  - name: "RegexEntityExtractor"      #Sử dụng lookup table hoặc regex
   - name: "ResponseSelector"
-    epochs: 100
+    epochs: 50
   - name: "FallbackClassifier"
     threshold: 0.3
     ambiguity_threshold: 0.1
+
 
 
 

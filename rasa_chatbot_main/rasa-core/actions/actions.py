@@ -73,11 +73,13 @@ class action_get_weather(Action):
         else:
             # dispatcher.utter_message(text=f'Địa điểm: {loc}')
             # sử dụng API lấy toạ độ
-            coordinates = requests.get(
-                'http://api.openweathermap.org/geo/1.0/direct?q={}&limit=1&appid={}'.format(loc, api_key)).json()
-            lat = round(coordinates[0]['lat'], 2)
-            lon = round(coordinates[0]['lon'], 2)
+
+            coordinates = requests.get('http://api.openweathermap.org/geo/1.0/direct?q={}&limit=1&appid={}'.format(loc, api_key)).json()
+
             if coordinates:
+                lat = round(coordinates[0]['lat'], 2)
+                lon = round(coordinates[0]['lon'], 2)
+
                 # sử dụng API để dự báo thời tiết
                 weathers = requests.get(
                     'http://api.openweathermap.org/data/2.5/forecast?lat={}&lon={}&appid={}'.format(lat, lon,
@@ -88,7 +90,7 @@ class action_get_weather(Action):
                 # country = weathers['city']['country']
                 city = loc
 
-                if weathers:
+                if weathers and current:  # Kiểm tra xem có lấy được dữ liệu từ API không
 
 # -------------------------------------------------------Dự báo thời tiết cho hôm nay ----------------------------------------------------------------------#
 
@@ -96,12 +98,13 @@ class action_get_weather(Action):
                         ##current
 
                         # Lấy thông tin thời tiết
-                        conditionCurrent = current['weather'][0]['main'] # Dịch
-                        conditionDesc = current['weather'][0]['description'] # Dịch
+                        conditionCurrent = current['weather'][0]['main']
+                        conditionDesc = current['weather'][0]['description']
                         temperature_cCurrent = round(current['main']['temp'] - 273.15, 2)
                         feelLike = round(current['main']['feels_like'] - 273.15, 2)
                         humidityCurrent = current['main']['humidity']
                         wind_mphCurrent = current['wind']['speed']
+                        wind_dirCurrent = self.wind_direction(current['wind']['deg']) # Lấy tên hướng gió
 
                         if weatherType is None or weatherType == 'thời tiết':
                             response = GoogleTranslator(source='en', target='vi').translate("""It is currently {} in {} at the moment. The temperature is {} degrees in C, feel like {} degrees in C, the humidity is {}% and the wind speed is {} mph."""
@@ -112,8 +115,8 @@ class action_get_weather(Action):
                         elif weatherType == 'độ ẩm':
                             response = GoogleTranslator(source='en', target='vi').translate("""The humidity now is {}%""".format(humidityCurrent))
                         elif weatherType == 'gió':
-                            response = GoogleTranslator(source='en', target='vi').translate("""The wind today is {} mph with deg is {} and gust is {}""".format(
-                                wind_mphCurrent, current['wind']['deg'], current['wind']['gust']))
+                            response = GoogleTranslator(source='en', target='vi').translate("""The wind today is {} mph with direction is {} and gust is {} mph""".format(
+                                wind_mphCurrent, wind_dirCurrent, current['wind']['gust']))
                         elif weatherType == 'nắng':
                             if conditionCurrent == 'Rain':
                                 response = GoogleTranslator(source='en', target='vi').translate(f"""No, today is not sunny, it {conditionDesc}""")
@@ -175,10 +178,10 @@ class action_get_weather(Action):
                                 morning[0]['main']['humidity'], afternoon[0]['main']['humidity'],
                                 evening[0]['main']['humidity']))
                         elif weatherType == 'gió':
-                            response = GoogleTranslator(source='en', target='vi').translate("""The wind tomorrow is {} mph with deg is {} and gust is {} in the morning, is {} mph with deg is {} and gust is {} in the afternoon and the last: {} mph with deg is {} and gust is {} in the evening""".format(
-                                morning[0]['wind']['speed'], morning[0]['wind']['deg'], morning[0]['wind']['gust'],
-                                afternoon[0]['wind']['speed'], afternoon[0]['wind']['deg'],
-                                afternoon[0]['wind']['gust'], evening[0]['wind']['speed'], evening[0]['wind']['deg'],
+                            response = GoogleTranslator(source='en', target='vi').translate("""The wind tomorrow is {} mph with direction is {} and gust is {} mph in the morning, is {} mph with direction is {} and gust is {} mph in the afternoon and {} mph with direction is {} and gust is {} mph in the evening""".format(
+                                morning[0]['wind']['speed'], self.wind_direction(morning[0]['wind']['deg']), morning[0]['wind']['gust'],
+                                afternoon[0]['wind']['speed'], self.wind_direction(afternoon[0]['wind']['deg']),
+                                afternoon[0]['wind']['gust'], evening[0]['wind']['speed'], self.wind_direction(evening[0]['wind']['deg']),
                                 evening[0]['wind']['gust']))
                         elif weatherType == 'nắng':
                             if conditionCurrent == 'Rain':
@@ -222,7 +225,7 @@ class action_get_weather(Action):
 
                         if guess == '' or guess is None:
                             if weatherType is None or weatherType == 'thời tiết':
-                                response = GoogleTranslator(source='en', target='vi').translate("""The weater next 2 days in {}: \n
+                                response = GoogleTranslator(source='en', target='vi').translate("""The weater in the day after tomorrow in {}: \n
                                 - Morning will be {} with {}: temperature is {} degrees, the humidity is {}% and the wind speed is {} mph.\n
                                 - Afternoon will feel {} with {}: temperature is {} degrees, the humidity is {}% and the wind speed is {} mph.\n
                                 - Evening will like {} with {}: temperature is {} degrees, the humidity is {}% and the wind speed is {}mph.\n
@@ -245,11 +248,11 @@ class action_get_weather(Action):
                                     morning[0]['main']['humidity'], afternoon[0]['main']['humidity'],
                                     evening[0]['main']['humidity']))
                             elif weatherType == 'gió':
-                                response = GoogleTranslator(source='en', target='vi').translate("""The wind next two days is {} mph with deg is {} and gust is {} in the morning, is {} mph with deg is {} and gust is {} in the afternoon and the last: {} mph with deg is {} and gust is {} in the evening""".format(
-                                    morning[0]['wind']['speed'], morning[0]['wind']['deg'], morning[0]['wind']['gust'],
-                                    afternoon[0]['wind']['speed'], afternoon[0]['wind']['deg'],
+                                response = GoogleTranslator(source='en', target='vi').translate("""The wind next two days is {} mph with direction is {} and gust is {} mph in the morning, is {} mph with direction is {} and gust is {} mph in the afternoon and {} mph with direction is {} and gust is {} mph in the evening""".format(
+                                    morning[0]['wind']['speed'], self.wind_direction(morning[0]['wind']['deg']), morning[0]['wind']['gust'],
+                                    afternoon[0]['wind']['speed'], self.wind_direction(afternoon[0]['wind']['deg']),
                                     afternoon[0]['wind']['gust'], evening[0]['wind']['speed'],
-                                    evening[0]['wind']['deg'], evening[0]['wind']['gust']))
+                                    self.wind_direction(evening[0]['wind']['deg']), evening[0]['wind']['gust']))
                             elif weatherType == 'nắng':
                                 if conditionCurrent == 'Rain':
                                     response = GoogleTranslator(source='en', target='vi').translate(f"""No, the next 2 days is not sunny, it {conditionDesc}""")
@@ -298,7 +301,7 @@ class action_get_weather(Action):
                                     response = GoogleTranslator(source='en', target='vi').translate("""There will be no sun both days, rest assured! 😉""")
 
                     else:
-                        response = GoogleTranslator(source='en', target='vi').translate("""Sorry, I can only forecast the weather within 2 days. Please purchase the ChatBot VIP Member package to unlock forecasts for more days 😉""")
+                        response = GoogleTranslator(source='en', target='vi').translate("""Sorry, i can't answer this question because i don't understand your intention. can you ask again more clearly. :<""")
 
                 else:
                     response = GoogleTranslator(source='en', target='vi').translate("""Something went wrong with the Weather Map API, please try again later!""")
@@ -309,3 +312,26 @@ class action_get_weather(Action):
         dispatcher.utter_message(response)
 
         return [SlotSet('location', loc), SlotSet('guess', None)]
+
+    @staticmethod
+    def wind_direction(degree):
+        # Chuyển giá trị độ sang hướng gió
+        if degree is None:
+            return 'None'
+
+        if degree >= 337.5 or degree < 22.5:
+            return 'North'
+        elif 22.5 <= degree < 67.5:
+            return 'North-East'
+        elif 67.5 <= degree < 112.5:
+            return 'East'
+        elif 112.5 <= degree < 157.5:
+            return 'South-East'
+        elif 157.5 <= degree < 202.5:
+            return 'South'
+        elif 202.5 <= degree < 247.5:
+            return 'South-West'
+        elif 247.5 <= degree < 292.5:
+            return 'West'
+        else:
+            return 'North-West'

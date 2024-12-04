@@ -5,13 +5,13 @@ intents:
   - affirm
   - ask_location
   - ask_weather
-  - bot_challenge
   - deny
   - goodbye
   - greet
   - thanks
   - utter_thanks
   - weather_location
+  - who_are_you
 
 # Những danh sách từ đồng nghĩa được sử dụng
 synonyms:
@@ -79,10 +79,10 @@ responses:
     - text: Chào bạn!!! Hy vọng bạn đang có một ngày tốt lành. Hôm nay tôi có thể giúp gì cho bạn?
     - text: Xin chào! Rất vui khi gặp bạn. Tôi có thể giúp gì hôm nay? Nếu bạn muốn biết về thời tiết, cứ hỏi tôi nhé!
     - text: Xin chào! Tôi ở đây để giúp bạn với mọi thông tin liên quan đến thời tiết. Bạn cần gì hôm nay?
-    - text: Chào mừng, tôi là bot thời tiết.
-    - text: Chào mừng bạn! Tôi là bot thời tiết thân thiện, sẵn sàng cung cấp thông tin thời tiết mới nhất cho bạn. Hãy hỏi tôi về thời tiết ở các địa điểm và thời điểm khác nhau nhé!
-    - text: Xin chào! Tôi là bot thời tiết, luôn sẵn sàng giúp bạn với các cập nhật thời tiết. Cứ thoải mái hỏi về điều kiện thời tiết ở các nơi và khoảng thời gian khác nhau nhé.
-    - text: Xin chào và chào mừng! Tôi là bot thời tiết ở đây để phục vụ bạn. Nếu có bất kỳ câu hỏi nào về thời tiết, đừng ngần ngại hỏi nhé.
+    - text: Xin chào, tôi là bot thời tiết, rất vui được giúp đỡ bạn.
+    - text: Chào bạn! Tôi là bot thời tiết, sẵn sàng cung cấp thông tin thời tiết mới nhất cho bạn. Hãy hỏi tôi về thời tiết ở các địa điểm và thời điểm khác nhau nhé!
+    - text: Xin chào! Tôi là bot thời tiết, luôn sẵn sàng giúp bạn với các thông tin mới nhất về thời tiết.
+    - text: Xin chào! Tôi là bot thời tiết, tôi ở đây để phục vụ bạn. Nếu có bất kỳ câu hỏi nào về thời tiết, đừng ngần ngại hỏi nhé.
 
   utter_thanks:
     - text: Không có gì, tôi luôn ở đây để giúp đỡ!!!
@@ -97,19 +97,87 @@ responses:
     - text: Tạm biệt nhé! Nếu bạn muốn tiếp tục trò chuyện hoặc hỏi về thời tiết, tôi sẽ luôn ở đây. Hãy giữ gìn sức khỏe!
 
   utter_iamabot:
-    - text: Tôi là bot thời tiết, được tạo bởi Rasa.
+    - text: Tôi là bot thời tiết, được tạo bởi Rasa. Tôi sẽ trả lời các câu hỏi liên quan đến thời tiết.
 
   utter_unclear:
     - text: Tôi chưa hiểu ý bạn, bạn có thể nói rõ hơn được không?
+    - text: Có vẻ nó không nằm trong phạm vi hiểu biết của tôi. Bạn hãy thử lại sau khi tôi được huấn luyện tốt hơn nhé!
 
 actions:
   - utter_greet_back
-  - utter_welcome
+  - utter_thanks
+  - utter_goodbye
   - action_get_weather
   - utter_unclear
+  - utter_iamabot
 
 session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+  session_expiration_time: 1 #Thời gian tính bằng phút giữa các phiên
+  carry_over_slots_to_new_session: false   #False: Quên đi slot giữa các phiên  True: Giữ lại
+
+
+lookup_tables:
+  - name: location
+    elements:
+      - Hà Nội
+      - Hồ Chí Minh
+      - Đà Nẵng
+      - Hải Phòng
+      - Cần Thơ
+      - An Giang
+      - Bà Rịa
+      - Bình Dương
+      - Bình Phước
+      - Bình Thuận
+      - Cà Mau
+      - Cao Bằng
+      - Đắk Lắk
+      - Đắk Nông
+      - Điện Biên
+      - Đồng Nai
+      - Đồng Tháp
+      - Gia Lai
+      - Hậu Giang
+      - Hòa Bình
+      - Hưng Yên
+      - Khánh Hòa
+      - Kiên Giang
+      - Kon Tum
+      - Lai Châu
+      - Lâm Đồng
+      - Lạng Sơn
+      - Lào Cai
+      - Long An
+      - Nam Định
+      - Nghệ An
+      - Ninh Bình
+      - Ninh Thuận
+      - Phú Thọ
+      - Phú Yên
+      - Quảng Bình
+      - Quảng Nam
+      - Quảng Ngãi
+      - Quảng Ninh
+      - Quảng Trị
+      - Sóc Trăng
+      - Sơn La
+      - Tây Ninh
+      - Thái Bình
+      - Thái Nguyên
+      - Thanh Hóa
+      - Huế
+      - Tiền Giang
+      - Trà Vinh
+      - Tuyên Quang
+      - Vĩnh Long
+      - Vĩnh Phúc
+      - Yên Bái
+      - Quảng Trị
+      - Lai Châu
+      - Hòa Bình
+      - Bến Tre
+      - Lạng Sơn
+      - Cao Bằng
+      - Bắc Ninh
 
 

@@ -1,0 +1,6 @@
+[
+  {
+    "name": "location",
+    "pattern": "(\\bHà\\ Nội\\b|\\bHồ\\ Chí\\ Minh\\b|\\bĐà\\ Nẵng\\b|\\bHải\\ Phòng\\b|\\bCần\\ Thơ\\b|\\bAn\\ Giang\\b|\\bBà\\ Rịa\\ \\-\\ Vũng\\ Tàu\\b|\\bBình\\ Dương\\b|\\bBình\\ Phước\\b|\\bBình\\ Thuận\\b|\\bCà\\ Mau\\b|\\bCao\\ Bằng\\b|\\bĐắk\\ Lắk\\b|\\bĐắk\\ Nông\\b|\\bĐiện\\ Biên\\b|\\bĐồng\\ Nai\\b|\\bĐồng\\ Tháp\\b|\\bGia\\ Lai\\b|\\bHậu\\ Giang\\b|\\bHòa\\ Bình\\b|\\bHưng\\ Yên\\b|\\bKhánh\\ Hòa\\b|\\bKiên\\ Giang\\b|\\bKon\\ Tum\\b|\\bLai\\ Châu\\b|\\bLâm\\ Đồng\\b|\\bLạng\\ Sơn\\b|\\bLào\\ Cai\\b|\\bLong\\ An\\b|\\bNam\\ Định\\b|\\bNghệ\\ An\\b|\\bNinh\\ Bình\\b|\\bNinh\\ Thuận\\b|\\bPhú\\ Thọ\\b|\\bPhú\\ Yên\\b|\\bQuảng\\ Bình\\b|\\bQuảng\\ Nam\\b|\\bQuảng\\ Ngãi\\b|\\bQuảng\\ Ninh\\b|\\bQuảng\\ Trị\\b|\\bSóc\\ Trăng\\b|\\bSơn\\ La\\b|\\bTây\\ Ninh\\b|\\bThái\\ Bình\\b|\\bThái\\ Nguyên\\b|\\bThanh\\ Hóa\\b|\\bThừa\\ Thiên\\ \\-\\ Huế\\b|\\bTiền\\ Giang\\b|\\bTrà\\ Vinh\\b|\\bTuyên\\ Quang\\b|\\bVĩnh\\ Long\\b|\\bVĩnh\\ Phúc\\b|\\bYên\\ Bái\\b)"
+  }
+]

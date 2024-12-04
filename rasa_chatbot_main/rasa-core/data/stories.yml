@@ -73,8 +73,40 @@ stories:
       - intent: thanks
       - action: utter_thanks
 
+  - story: weather8
+    steps:
+      - intent: greet
+      - action: utter_greet_back
+      - intent: weather_location
+      - action: action_get_weather
+      - intent: weather_location
+      - action: action_get_weather
+      - intent: weather_location
+      - action: action_get_weather
+      - intent: weather_location
+      - action: action_get_weather
+      - intent: thanks
+      - action: utter_thanks
+
+  - story: weather9
+    steps:
+      - intent: greet
+      - action: utter_greet_back
+      - intent: ask_weather
+      - action: action_get_weather
+      - intent: ask_location
+      - action: action_get_weather
+      - intent: ask_weather
+      - action: action_get_weather
+      - intent: ask_weather
+      - action: action_get_weather
+      - intent: thanks
+      - action: utter_thanks
+
 
   - story: bot
     steps:
-     - intent: bot_challenge
+     - intent: who_are_you
      - action: utter_iamabot
+
+

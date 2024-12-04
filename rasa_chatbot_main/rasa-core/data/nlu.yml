@@ -46,138 +46,74 @@ nlu:
       - không đúng
       - tôi không chắc
       - không chắc
-      
+
+  - intent: who_are_you
+    examples: |
+      - Bạn là ai?
+      - Bạn phục vụ mục đích gì?
+      - Bạn tên là gì?
+      - Bạn là?
 
   - intent: ask_weather
     examples: |
       - Cho tôi biết [thời tiết](weather_type) [hôm nay](forecast_period) thế nào?
-      - Cho tôi biết [nắng](weather_type) [hôm nay](forecast_period) thế nào?
-      - [mưa](weather_type) [hôm nay](forecast_period) thế nào?
-      - [gió](weather_type) [hôm nay](forecast_period) thế nào?
-      - [độ ẩm](weather_type) [hôm nay](forecast_period) là bao nhiêu?
-      - [bão](weather_type) [hôm nay](forecast_period) thế nào?
-      - [tuyết](weather_type) [hôm nay](forecast_period) thế nào?
+      - Cho tôi biết [nắng](weather_type) ngày [hôm nay](forecast_period) ra sao?
+      - Trời có [mưa](weather_type) [hôm nay](forecast_period) không?
+      - [gió](weather_type) [hôm nay](forecast_period) như thế nào?
+      - [độ ẩm](weather_type) trong [hôm nay](forecast_period) là bao nhiêu?
+      - [nhiệt độ](weather_type) là bao nhiêu trong [ngày hôm sau](forecast_period) thế?
       - [Thời tiết](weather_type) [hôm nay](forecast_period) như thế nào?
-      - [Thời tiết](weather_tpye) [ngày mai](forecast_period) như thế nào?
+      - [Thời tiết](weather_type) [ngày mai](forecast_period) như thế nào?
       - Thời tiết [hai ngày tới](forecast_period) như thế nào?
       - Hôm nay có [nắng](weather_type) không?
       - Hôm nay có [mưa](weather_type) không?
       - Hôm nay có [bão](weather_type) không?
       - Hôm nay có [tuyết](weather_type) không?
-      - [thời tiết](weather_type) [hiện tại]{"entity": "forecast_period", "value": "hôm nay"} thế nào?
-      - [thời tiết](weather_type) [trong ngày hôm nay]{"entity": "forecast_period", "value": "hôm nay"} thế nào?
-      - [thời tiết](weather_type) [trong hôm nay]{"entity": "forecast_period", "value": "hôm nay"} thế nào?
-      - [thời tiết](weather_type) [ngày hôm nay]{"entity": "forecast_period", "value": "hôm nay"} thế nào?
-      - [thời tiết](weather_type) [ngày mai]{"entity": "forecast_period", "value": "ngày mai"} thế nào?
-      - [thời tiết](weather_type) [ngày kia]{"entity": "forecast_period", "value": "hai ngày tới"}
-      - [thời tiết](weather_type) [hai ngày sau]{"entity": "forecast_period", "value": "hai ngày tới"}
-      - [thời tiết](weather_type) [hai ngày tiếp theo]{"entity": "forecast_period", "value": "hai ngày tới"}
-      - [thời tiết](weather_type) [48 giờ tiếp theo]{"entity": "forecast_period", "value": "hai ngày tới"}
-      - [thời tiết](weather_type) [hai ngày đến]{"entity": "forecast_period", "value": "hai ngày tới"}
-      - [thời tiết](weather_type) [trong hai ngày tới]{"entity": "forecast_period", "value": "hai ngày tới"}
+      - Cho tôi biết [thời tiết](weather_type) [hiện tại](forecast_period) thế nào?
+      - Cho tôi hỏi [thời tiết](weather_type) [trong ngày hôm nay](forecast_period) thế nào?
+      - Nói xem [thời tiết](weather_type) [trong hôm nay](forecast_period)} thế nào?
+      - Cho biết [thời tiết](weather_type) [ngày hôm nay](forecast_period) thế nào?
+      - Dự báo [thời tiết](weather_type) của [ngày mai](forecast_period) thế nào?
+      - Dự báo [thời tiết](weather_type) trong [ngày tiếp theo](forecast_period) thế nào?
+      - Dự báo [thời tiết](weather_type) [ngày hôm sau](forecast_period) thế nào?
+      - Dự báo [thời tiết](weather_type) trong [ngày kế tiếp](forecast_period) thế nào?
+      - Dự báo [thời tiết](weather_type) của [ngày kia](forecast_period)
+      - [thời tiết](weather_type) [hai ngày sau](forecast_period) như thế nào?
+      - [thời tiết](weather_type) [hai ngày tiếp theo](forecast_period) như nào?
+      - [thời tiết](weather_type) [48 giờ tiếp theo](forecast_period) kiểu gì?
+      - [thời tiết](weather_type) [hai ngày đến](forecast_period) 
+      - [thời tiết](weather_type) [trong hai ngày tới](forecast_period)
       
-
-
-  - intent: ask_location
-    examples: |
-      - [Ha Noi](location)
-      - [Ho Chi Minh](location)
-      - [An Giang](location)
-      - [Ba Ria - Vung Tau](location)
-      - [Bac Giang](location)
-      - [Bac Kan](location)
-      - [Bac Lieu](location)
-      - [Bac Ninh](location)
-      - [Ben Tre](location)
-      - [Binh Duong](location)
-      - [Binh Dinh](location)
-      - [Binh Phuoc](location)
-      - [Binh Thuan](location)
-      - [Ca Mau](location)
-      - [Cao Bang](location)
-      - [Can Tho](location)
-      - [Dak Lak](location)
-      - [Dak Nong](location)
-      - [Dien Bien](location)
-      - [Dong Nai](location)
-      - [Dong Thap](location)
-      - [Gia Lai](location)
-      - [Ha Giang](location)
-      - [Ha Nam](location)
-      - [Ha Tinh](location)
-      - [Hai Duong](location)
-      - [Hai Phong](location)
-      - [Hau Giang](location)
-      - [Hoa Binh](location)
-      - [Hung Yen](location)
-      - [Khanh Hoa](location)
-      - [Kien Giang](location)
-      - [Kon Tum](location)
-      - [Lai Chau](location)
-      - [Lao Cai](location)
-      - [Lam Dong](location)
-      - [Long An](location)
-      - [Nam Dinh](location)
-      - [Nghe An](location)
-      - [Ninh Binh](location)
-      - [Ninh Thuan](location)
-      - [Phu Tho](location)
-      - [Phu Yen](location)
-      - [Quang Binh](location)
-      - [Quang Nam](location)
-      - [Quang Ngai](location)
-      - [Quang Ninh](location)
-      - [Soc Trang](location)
-      - [Son La](location)
-      - [Tay Ninh](location)
-      - [Thai Binh](location)
-      - [Thai Nguyen](location)
-      - [Thanh Hoa](location)
-      - [Thua Thien Hue](location)
-      - [Tien Giang](location)
-      - [Tra Vinh](location)
-      - [Tuyen Quang](location)
-      - [Vinh Long](location)
-      - [Vinh Phuc](location)
-      - [Yen Bai](location)
-      - [Quang Tri](location)
-      - [Lai Chau](location)
-      - [Hoa Binh](location)
-      - [Ben Tre](location)
-      - [Lang Son](location)
-      - [Cao Bang](location)
-      - [Bac Ninh](location)
 
   - intent: weather_location
     examples: |
-      - Cho tôi biết [thời tiết](weather_type) [hôm nay](forecast_period) tại [Ha Noi](location)?
-      - Cho tôi biết [thời tiết](weather_type) [ngày mai](forecast_period) tại [Ha Noi](location)?
-      - Cho tôi biết [thời tiết](weather_type) [hai ngày tới](forecast_period) tại [Ha Noi](location)?
+      - Cho tôi biết [thời tiết](weather_type) [hôm nay](forecast_period) tại [Hà Nội](location) ra sao?
+      - Nói cho tôi [thời tiết](weather_type) [ngày hôm nay](forecast_period) tại [Đà Nẵng](location) thế nào?
+      - Cho tôi hỏi [thời tiết](weather_type) [trong hôm nay](forecast_period) ở [Nha Trang](location) như thế nào?
+      - [thời tiết](weather_type) [hiện tại](forecast_period) tại [Hồ Chí Minh](location)?
+      - [thời tiết](weather_type) [trong suốt cả ngày](forecast_period) tại [Huế](location)?
+      - [thời tiết](weather_type) [ngày này](forecast_period) ở [Hà Giang](location)?
+      - [thời tiết](weather_type) [ngày hôm nay](forecast_period) tại [Cà Mau](location)?
+      - Cho tôi biết [thời tiết](weather_type) [ngày mai](forecast_period) ở [Hà Nội](location)?
+      - Cho tôi biết [thời tiết](weather_type) [hai ngày tới](forecast_period) tại [Thanh Hoá](location)?
       
-      - [thời tiết](weather_type) [Hà Nội](location) như thế nào?
-      - [nắng](weather_type) tại [Hà Nội](location) như thế nào?
-      - [nhiệt độ](weather_type) tại [Hà Nội](location) như thế nào?
-      - [độ ẩm](weather_type) tại [Hà Nội](location) như thế nào?
-      - [mưa](weather_type) tại [Hà Nội](location) như thế nào?
-      - [gió](weather_type) tại [Hà Nội](location) như thế nào?
-      - [bão](weather_type) tại [Hà Nội](location) như thế nào?
-      - [tuyết](weather_type) tại [Hà Nội](location) như thế nào?
+      - [thời tiết](weather_type) ở [Khánh Hoà](location) như thế nào?
+      - [nhiệt độ](weather_type) tại [Hưng Yên](location) là bao nhiêu?
+      - [mức độ nóng](weather_type) ở [Hà Nội](location) hiện như thế nào
+      - Thành phố [Hồ Chí Minh] có [chỉ số nhiệt độ](weather_type) là bao nhiêu?
+      - [Hồ Chí Minh] có [chỉ số nhiệt](weather_type) là bao nhiêu?
+      - [độ ẩm](weather_type) tại [Trà Vinh](location) là bao nhiêu?
+      - Tốc độ [gió](weather_type) tại [Vĩnh Phúc](location) như thế nào?
     
-      - [nhiệt độ](weather_type) và [độ ẩm](weather_type) tại [Hà Nội](location) [ngày mai](forecast_period) như thế nào?
-      - [nhiệt độ](weather_type) và [độ ẩm](weather_type) tại [Hà Nội](location) [ngày mai](forecast_period) như thế nào?
-
-      - [hôm nay](forecast_period) [Hà Nội](location) có [nắng](weather_type) không?
-      - [ngày mai](forecast_period) [Hà Nội](location) có [nắng](weather_type) không?
-      - [hai ngày tới](forecast_period) [Hà Nội](location) có [nắng](weather_type) không?
-      - [ngày kia](forecast_period) [Hà Nội](location) có [nắng](weather_type) không?
-      - [hai ngày sau](forecast_period) [Hà Nội](location) có [nắng](weather_type) không?
-      - [hai ngày tiếp theo](forecast_period) [Hà Nội](location) có [nắng](weather_type) không?
-      - [trong hai ngày tới](forecast_period) [Hà Nội](location) có [nắng](weather_type) không?
-      - [48 giờ tới](forecast_period) [Hà Nội](location) có [nắng](weather_type) không?
-      - [hai ngày đến](forecast_period) [Hà Nội](location) có [nắng](weather_type) không?
-      
-      
-    
+      - Cho biết [hôm nay](forecast_period) [Điện Biên](location) có [nắng](weather_type) không?
+      - Cho tôi biết [ngày mai](forecast_period) [Đồng Nai](location) có [mưa](weather_type) không?
+      - Nói cho tôi biết [hai ngày tới](forecast_period) [Đồng Tháp](location) có [nắng](weather_type) không?
+      - Dự báo [ngày kia](forecast_period) [An Giang](location) có [mưa](weather_type) không?
+      - [hai ngày sau](forecast_period) [Cà Mau](location) có [nắng](weather_type) không?
+      - [hai ngày tiếp theo](forecast_period) [Cao Bằng](location) có [mưa](weather_type) không?
+      - [trong hai ngày tới](forecast_period) [Long An](location) có [nắng](weather_type) không?
+      - [48 giờ tới](forecast_period) [Nghệ An](location) có [nắng](weather_type) không?
+      - [hai ngày đến](forecast_period) [Phú Yên](location) có [mưa](weather_type) không?
 
   - intent: thanks
     examples: |
@@ -209,8 +145,6 @@ nlu:
       - ngay thời điểm này
       - ngay lập tức
       - tại thời điểm này
-
-
 
   - synonym: hôm nay
     examples: |
@@ -252,9 +186,6 @@ nlu:
       - độ ấm
       - độ lạnh
       - độ nóng
-      - Fahrenheit
-      - Celsius
-      - Kelvin
       - chỉ số nhiệt
 
   - synonym: độ ẩm
@@ -273,26 +204,60 @@ nlu:
       - độ ẩm tương đối
       - điều kiện ẩm
 
-
-  - intent: bot_challenge
+  - lookup: location
     examples: |
-      - are you a bot?
-      - are you a human?
-      - am I talking to a bot?
-      - am I talking to a human?
-      - prove you're not a robot
-      - can you pass the Turing test?
-      - tell me your identity
-      - are you real or artificial?
-      - are you automated?
-      - are you a machine?
-      - show me you're not a bot
-      - can bots have conversations?
-      - is this automated?
-      - are you a computer program?
-      - can you think like a human?
-      - do you have feelings?
-      - are you a living being?
-      - are you made of flesh and blood?
-      - are you sentient?
+      - Hà Nội
+      - Hồ Chí Minh
+      - Đà Nẵng
+      - Hải Phòng
+      - Cần Thơ
+      - An Giang
+      - Bà Rịa
+      - Bình Dương
+      - Bình Phước
+      - Bình Thuận
+      - Cà Mau
+      - Cao Bằng
+      - Đắk Lắk
+      - Đắk Nông
+      - Điện Biên
+      - Đồng Nai
+      - Đồng Tháp
+      - Gia Lai
+      - Hậu Giang
+      - Hòa Bình
+      - Hưng Yên
+      - Khánh Hòa
+      - Kiên Giang
+      - Kon Tum
+      - Lai Châu
+      - Lâm Đồng
+      - Lạng Sơn
+      - Lào Cai
+      - Long An
+      - Nam Định
+      - Nghệ An
+      - Ninh Bình
+      - Ninh Thuận
+      - Phú Thọ
+      - Phú Yên
+      - Quảng Bình
+      - Quảng Nam
+      - Quảng Ngãi
+      - Quảng Ninh
+      - Quảng Trị
+      - Sóc Trăng
+      - Sơn La
+      - Tây Ninh
+      - Thái Bình
+      - Thái Nguyên
+      - Thanh Hóa
+      - Huế
+      - Tiền Giang
+      - Trà Vinh
+      - Tuyên Quang
+      - Vĩnh Long
+      - Vĩnh Phúc
+      - Yên Bái
+
 
