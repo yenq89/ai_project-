@@ -81,7 +81,7 @@ function Basic() {
     margin: "0 auto",
     borderRadius: "30px",
     boxShadow: "0 16px 20px 0 rgba(0,0,0,0.4)",
-    background: "#7F7FD5",
+    background: "#5997c3",
   };
   const styleHeader = {
     padding: "1rem",
@@ -120,7 +120,7 @@ function Basic() {
                       <div className="msgalignstart">
                         <div>
                           <img
-                            src="https://i.pinimg.com/originals/bf/c2/d5/bfc2d545085d92374c5d1504e6cab298.gif"
+                            src="https://i.pinimg.com/originals/05/f7/4e/05f74e9aaba878a614d217a84b5c6aba.gif"
                             alt="botimg"
                             className="img-fluid botIcon"
                           />
@@ -158,7 +158,7 @@ function Basic() {
                         </h5>
                         <div>
                           <img
-                            src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg"
+                            src="https://i.pinimg.com/736x/9f/db/f4/9fdbf4c61a5e5e91878cb7e59655e4a2.jpg"
                             alt="userimg"
                             className="img-fluid userIcon"
                           />
@@ -172,7 +172,7 @@ function Basic() {
                 <div className="msgalignstart">
                   <div>
                     <img
-                      src="https://i.pinimg.com/originals/bf/c2/d5/bfc2d545085d92374c5d1504e6cab298.gif"
+                      src="https://i.pinimg.com/originals/05/f7/4e/05f74e9aaba878a614d217a84b5c6aba.gif"
                       alt="botimg"
                       className="img-fluid botIcon"
                     />

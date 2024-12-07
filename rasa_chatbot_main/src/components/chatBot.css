@@ -12,7 +12,7 @@ body {
   border-radius: 50%;
   margin: 5px;
   border: none;
-  background-color: rgb(11, 252, 31);
+  background-color: #e6a57a;
 }
 
 .msginp {
@@ -39,7 +39,7 @@ body {
 }
 
 .botmsg {
-  background-color: #82ccdd;
+  background-color: #dfdbc5;
   padding-left: 15px;
   padding-right: 15px;
 
@@ -50,7 +50,7 @@ body {
 }
 
 .usermsg {
-  background-color: #78e08f;
+  background-color: #d8b8c5;
   padding-left: 15px;
   padding-right: 15px;
 
@@ -73,13 +73,13 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(140, 27, 185);
+  background: rgb(144, 145, 175);
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #b909e6;
+  background: #d5d8de;
 }
 
 .botIcon,
