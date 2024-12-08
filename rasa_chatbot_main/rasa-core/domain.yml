@@ -101,7 +101,6 @@ responses:
 
   utter_unclear:
     - text: Tôi chưa hiểu ý bạn, bạn có thể nói rõ hơn được không?
-    - text: Có vẻ nó không nằm trong phạm vi hiểu biết của tôi. Bạn hãy thử lại sau khi tôi được huấn luyện tốt hơn nhé!
 
 actions:
   - utter_greet_back
