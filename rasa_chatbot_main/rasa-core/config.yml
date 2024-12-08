@@ -21,10 +21,10 @@ pipeline:
   - name: "RegexFeaturizer"
   - name: "LexicalSyntacticFeaturizer"
   - name: "CountVectorsFeaturizer"
+  - name: "CountVectorsFeaturizer"
     analyzer: "char_wb"
     min_ngram: 1
     max_ngram: 4
-  - name: "CountVectorsFeaturizer"
   - name: "DIETClassifier"
     epochs: 50
     constrain_similarities: true

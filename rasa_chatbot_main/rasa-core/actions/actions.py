@@ -94,8 +94,6 @@ class action_get_weather(Action):
 # -------------------------------------------------------Dự báo thời tiết cho hôm nay ----------------------------------------------------------------------#
 
                     if forecastPeriod is None or forecastPeriod == 'hôm nay':
-                        ##current
-
                         # Lấy thông tin thời tiết
                         conditionCurrent = current['weather'][0]['main']
                         conditionDesc = current['weather'][0]['description']
@@ -125,7 +123,7 @@ class action_get_weather(Action):
                                 response = GoogleTranslator(source='en', target='vi').translate("""Hmmm, it's not exactly sunny today, maybe a little because there are scattered clouds today 😉""")
                             else:
                                 response = GoogleTranslator(source='en', target='vi').translate(f"""No, today is not sunny, it {conditionDesc}""")
-                        elif weatherType == 'Rain':
+                        elif weatherType == 'mưa':
                             if conditionCurrent == 'Rain':
                                 if conditionDesc == 'light rain':
                                     response = GoogleTranslator(source='en', target='vi').translate("""Yes, The weather today is rain but it is light rain, you may be bring umbrella ☔""")
