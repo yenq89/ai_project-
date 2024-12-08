@@ -7,6 +7,7 @@ intents:
   - goodbye
   - greet
   - thanks
+  - ask_location
   - ask_weather
   - weather_location
   - who_are_you

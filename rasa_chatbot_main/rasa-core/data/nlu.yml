@@ -94,7 +94,7 @@ nlu:
       - Cho tôi hỏi [thời tiết](weather_type) [trong hôm nay](forecast_period) ở [Nha Trang](location) như thế nào?
       - [thời tiết](weather_type) [hiện tại](forecast_period) tại [Hồ Chí Minh](location)?
       - [thời tiết](weather_type) [trong suốt cả ngày](forecast_period) tại [Huế](location)?
-      - [thời tiết](weather_type) [ngày này](forecast_period) ở [Hà Giang](location)?
+      - [thời tiết](weather_type) [hôm nay](forecast_period) ở [Hà Giang](location)?
       - [thời tiết](weather_type) [ngày hôm nay](forecast_period) tại [Cà Mau](location)?
       - Cho tôi biết [thời tiết](weather_type) [ngày mai](forecast_period) ở [Hà Nội](location)?
       - Cho tôi biết [thời tiết](weather_type) [hai ngày tới](forecast_period) tại [Thanh Hoá](location)?

@@ -87,7 +87,6 @@ class action_get_weather(Action):
                 # sử dụng API lấy dữ liệu thời tiết hiện tại
                 current = requests.get(
                     'http://api.openweathermap.org/data/2.5/weather?q={}&appid={}'.format(loc, api_key)).json()
-                # country = weathers['city']['country']
                 city = loc
 
                 if weathers and current:  # Kiểm tra xem có lấy được dữ liệu từ API không
