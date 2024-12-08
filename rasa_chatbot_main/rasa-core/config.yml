@@ -30,8 +30,8 @@ pipeline:
     constrain_similarities: true
     entity_recognition: true     # nhận diện thực thể
     intent_classification: true     #phân loại intent
-  - name: "EntitySynonymMapper"
   - name: "RegexEntityExtractor"      #Sử dụng lookup table hoặc regex
+  - name: "EntitySynonymMapper"
   - name: "ResponseSelector"
     epochs: 50
   - name: "FallbackClassifier"
