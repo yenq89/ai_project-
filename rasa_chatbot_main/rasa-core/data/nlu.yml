@@ -61,14 +61,17 @@ nlu:
       - Trời có [mưa](weather_type) [hôm nay](forecast_period) không?
       - [gió](weather_type) [hôm nay](forecast_period) như thế nào?
       - [độ ẩm](weather_type) trong [hôm nay](forecast_period) là bao nhiêu?
+      - [độ ẩm không khí](weather_type) trong [hôm nay](forecast_period) là bao nhiêu?
+      - [mức độ ẩm](weather_type) trong [hôm nay](forecast_period) là bao nhiêu?
+      - [nhiệt độ](weather_type) là bao nhiêu trong [ngày hôm sau](forecast_period) thế?
+      - [chỉ số nhiệt độ](weather_type) là bao nhiêu trong [ngày hôm sau](forecast_period) thế?
       - [nhiệt độ](weather_type) là bao nhiêu trong [ngày hôm sau](forecast_period) thế?
       - [Thời tiết](weather_type) [hôm nay](forecast_period) như thế nào?
       - [Thời tiết](weather_type) [ngày mai](forecast_period) như thế nào?
       - Thời tiết [hai ngày tới](forecast_period) như thế nào?
       - Hôm nay có [nắng](weather_type) không?
-      - Hôm nay có [mưa](weather_type) không?
-      - Hôm nay có [bão](weather_type) không?
-      - Hôm nay có [tuyết](weather_type) không?
+      - Hôm nay liệu có [mưa](weather_type) không?
+      - Hôm nay có [bão](weather_type) không nhỉ? 
       - Cho tôi biết [thời tiết](weather_type) [hiện tại](forecast_period) thế nào?
       - Cho tôi hỏi [thời tiết](weather_type) [trong ngày hôm nay](forecast_period) thế nào?
       - Nói xem [thời tiết](weather_type) [trong hôm nay](forecast_period)} thế nào?
@@ -78,11 +81,10 @@ nlu:
       - Dự báo [thời tiết](weather_type) [ngày hôm sau](forecast_period) thế nào?
       - Dự báo [thời tiết](weather_type) trong [ngày kế tiếp](forecast_period) thế nào?
       - Dự báo [thời tiết](weather_type) của [ngày kia](forecast_period)
-      - [thời tiết](weather_type) [hai ngày sau](forecast_period) như thế nào?
+      - Đưa ra dự báo [thời tiết](weather_type) [hai ngày sau](forecast_period)?
       - [thời tiết](weather_type) [hai ngày tiếp theo](forecast_period) như nào?
-      - [thời tiết](weather_type) [48 giờ tiếp theo](forecast_period) kiểu gì?
-      - [thời tiết](weather_type) [hai ngày đến](forecast_period) 
-      - [thời tiết](weather_type) [trong hai ngày tới](forecast_period)
+      - [thời tiết](weather_type) [hai ngày đến](forecast_period) thế nào?
+      - [thời tiết](weather_type) [trong hai ngày tới](forecast_period) ra sao?
       
 
   - intent: weather_location
@@ -106,7 +108,14 @@ nlu:
       - Tốc độ [gió](weather_type) tại [Vĩnh Phúc](location) như thế nào?
     
       - Cho biết [hôm nay](forecast_period) [Điện Biên](location) có [nắng](weather_type) không?
+      - Cho biết [ngày hôm nay](forecast_period) [Điện Biên](location) có [mưa](weather_type) không?
+      - Cho biết [trong ngày hôm nay](forecast_period) [Điện Biên](location) có [nắng](weather_type) không?
+      - Cho biết [vào ngày hôm nay](forecast_period) [Điện Biên](location) có [mưa](weather_type) không?
       - Cho tôi biết [ngày mai](forecast_period) [Đồng Nai](location) có [mưa](weather_type) không?
+      - Cho tôi biết [mai](forecast_period) [Đồng Nai](location) có [mưa](weather_type) không?
+      - Cho tôi biết [vào ngày kế tiếp](forecast_period) [Đồng Nai](location) có [mưa](weather_type) không?
+      - Cho tôi biết [ngày kế tiếp](forecast_period) [Đồng Nai](location) có [mưa](weather_type) không?
+      - Cho tôi biết [ngày hôm sau](forecast_period) [Đồng Nai](location) có [mưa](weather_type) không?
       - Nói cho tôi biết [hai ngày tới](forecast_period) [Đồng Tháp](location) có [nắng](weather_type) không?
       - Dự báo [ngày kia](forecast_period) [An Giang](location) có [mưa](weather_type) không?
       - [hai ngày sau](forecast_period) [Cà Mau](location) có [nắng](weather_type) không?
@@ -165,7 +174,7 @@ nlu:
       - mai
       - ngày kế tiếp
       - trong vòng 24 giờ tới
-      - vào ngày hôm sau
+      - ngày hôm sau
       - trong ngày tới
       - ngày tiếp theo
       - ngày tiếp theo sau đó
@@ -194,13 +203,8 @@ nlu:
       - mức độ ẩm
       - độ ẩm không khí
       - không khí ẩm
-      - độ ẩm của không khí
-      - độ ẩm trong không khí
-      - không khí ẩm ướt
-      - điều kiện ẩm ướt
-      - khí hậu ẩm
       - độ ẩm không khí
-      - mức độ độ ẩm
+      - mức độ ẩm
       - độ ẩm tương đối
       - điều kiện ẩm
 

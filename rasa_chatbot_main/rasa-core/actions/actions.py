@@ -301,7 +301,7 @@ class action_get_weather(Action):
                                     response = GoogleTranslator(source='en', target='vi').translate("""There will be no sun both days, rest assured! 😉""")
 
                     else:
-                        response = GoogleTranslator(source='en', target='vi').translate("""Sorry, i can't answer this question because i don't understand your intention. can you ask again more clearly. :<""")
+                        response = GoogleTranslator(source='en', target='vi').translate("""Sorry, I can't predict the weather during this time, please try again later or buy the ChatBot VIP package to unlock many new features!""")
 
                 else:
                     response = GoogleTranslator(source='en', target='vi').translate("""Something went wrong with the Weather Map API, please try again later!""")

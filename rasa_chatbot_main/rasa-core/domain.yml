@@ -3,13 +3,11 @@ version: "3.1"
 #Danh sách các intent mà hệ thống sẽ nhận diện trong cuộc trò chuyện với người dùng
 intents:
   - affirm
-  - ask_location
-  - ask_weather
   - deny
   - goodbye
   - greet
   - thanks
-  - utter_thanks
+  - ask_weather
   - weather_location
   - who_are_you
 
@@ -100,7 +98,9 @@ responses:
     - text: Tôi là bot thời tiết, được tạo bởi Rasa. Tôi sẽ trả lời các câu hỏi liên quan đến thời tiết.
 
   utter_unclear:
+    - text: Có vẻ là tôi chưa hiểu được bạn muốn gì.
     - text: Tôi chưa hiểu ý bạn, bạn có thể nói rõ hơn được không?
+    - text: Tôi không thể trả lời câu hỏi mất rồi, hãy thử mua gói ChatBot VIP để mở khoá thêm nhiều tính năng hơn nhé!
 
 actions:
   - utter_greet_back
