@@ -112,3 +112,20 @@ Ví dụ chatbot trả lời câu hỏi về thời tiết:
 - Chatbot đạt **~90% accuracy** trong intent classification
 - Hỗ trợ trả lời các câu hỏi về **thời tiết theo thành phố**
 - Có khả năng **hiểu nhiều cách hỏi khác nhau của người dùng**
+
+## Tech Stack
+
+### Programming Language
+- Python
+
+### Framework
+- Rasa
+
+### API Integration
+- Weather API
+
+### Frontend
+- HTML
+- CSS
+- JavaScript
+
