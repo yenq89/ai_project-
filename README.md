@@ -105,7 +105,7 @@ Ngoài ra hệ thống còn sử dụng:
 
 Ví dụ chatbot trả lời câu hỏi về thời tiết:
 
-![Chatbot Demo]()
+![Chatbot Demo](demo.png)
 
 ## Kết quả đạt được
 
