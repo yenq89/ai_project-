@@ -1,4 +1,5 @@
-## Run project
+
+## Hướng dẫn chạy local
 #### `npm i`
 Tải node_module
 #### `npm start`
@@ -20,4 +21,5 @@ Lấy thông tin dự báo thời tiết theo vĩ độ và kinh độ trong vò
 Lấy thông tin kinh độ và vĩ độ của thành phố hoặc quốc gia
 #### `http://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}`
 Lấy thông tin thời tiết hiện tại của 1 thành phố bất kì
+
 
